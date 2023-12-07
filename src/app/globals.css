@@ -18,10 +18,30 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  height: 100vh;
 }
+
+.card{ 
+  @apply mb-5 block rounded-lg border border-gray-300 bg-white shadow-md;
+}
+
+.cart-badge {
+  @apply absolute font-bold text-orange-600 ml-8 mt-0 text-center w-4;
+}
+
+.arrow {
+  @apply after:inline-block after:content-["\0279E"] after:transition-transform after:duration-[0.3s] after:ease-[ease-out] after:pl-2  hover:after:translate-x-1;
+}
+.arrow::after {
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+}
+.arrow:hover::after {
+  -webkit-transform: translateX(4px);
+  -moz-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  -o-transform: translateX(4px);
+}
+
